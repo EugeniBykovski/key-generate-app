@@ -1,9 +1,5 @@
-import Paragraph from "./components/ui/Paragraph";
+import Paragraph from "@/components/ui/Paragraph";
 
 export default function Home() {
-  return (
-    <main className="bg-red-500">
-      <Paragraph size="sm">Text</Paragraph>
-    </main>
-  );
+  return <main className="bg-red-500"></main>;
 }
