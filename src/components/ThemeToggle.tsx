@@ -2,10 +2,14 @@
 
 import { useTheme } from "next-themes";
 import { FC } from "react";
-import { DropdownMenu } from "./ui/DropDownMenu";
-import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/DropDownMenu";
 import Button from "./ui/Button";
-import { Moon, Sun } from "lucide-react";
+import { Laptop, Moon, Sun } from "lucide-react";
 
 interface ThemeToggleProps {}
 
@@ -21,6 +25,20 @@ const ThemeToggle: FC<ThemeToggleProps> = ({}) => {
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" forceMount>
+        <DropdownMenuItem onClick={() => setTheme("light")}>
+          <Sun className="mr-2 h-4 w-4" />
+          <span>Light</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("dark")}>
+          <Moon className="mr-2 h-4 w-4" />
+          <span>Dark</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("system")}>
+          <Laptop className="mr-2 h-4 w-4" />
+          <span>System</span>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
     </DropdownMenu>
   );
 };
